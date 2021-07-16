@@ -323,7 +323,7 @@
     'use strict';
     let step = 11;
     let funcDone = false;
-    const infoElemSelector = '#info.style-scope.ytd-video-primary-info-renderer';
+    const infoElemSelector = '#primary-inner > ytd-watch-metadata';
     const colors = ['#58CCED', '#3895D3', '#1261A0']; // https://www.schemecolor.com/wedding-in-india.php
     if (!funcDone) window.addEventListener('yt-navigate-start', addSpeeds);
 
@@ -369,10 +369,9 @@
             } );
             moreSpeedsDiv.appendChild(btn);
         }
-
+        moreSpeedsDiv.style.marginTop = '8px'
         let infoElem = document.querySelector(infoElemSelector);
         infoElem.parentElement.insertBefore(moreSpeedsDiv, infoElem);
-        console.log(document.getElementById('more-speeds'));
         changeColor();
         funcDone = true;
     }
